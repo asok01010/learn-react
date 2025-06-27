@@ -1,7 +1,7 @@
 const ContactUs = () => {
   return (
     <div className="container">
-      <div class="contact-us">
+      <div className="contact-us">
         <h1>Contact Us</h1>
         <p>If you have any questions, feel free to reach out!</p>
         <form class="contact-form" action="/submit-contact" method="POST">

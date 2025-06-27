@@ -1,6 +1,7 @@
 import { Outlet } from "react-router";
 import Header from "./Header";
 import Footer from "./Footer";
+import Sidebar from "./Sidebar";
 
 
 
@@ -10,7 +11,12 @@ const AdminLayout = () => {
       <header>
         <Header/>
       </header>
-      
+
+    <aside>
+
+      <Sidebar/>
+    </aside>
+
         <div class="col-md-10 content-wrapper">
           <Outlet />
         </div>
