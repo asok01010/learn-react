@@ -1,17 +1,24 @@
-import { NavLink } from "react-router";
+import { useNavigate } from "react-router-dom";
+
 
 const Header = () => {
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    localStorage.removeItem("AUTH_TOKEN");
+    navigate("/admin/login");
+  };
+
   return (
-    <>
-      <h2>My Application</h2>
-          <div class="navbar">
-            <ul  >
-            <li> <NavLink to="/home">Home</NavLink></li>
-            <li> <NavLink to="/about">About</NavLink></li>
-            <li><NavLink to="contact-us">ContactUS</NavLink></li>
-            </ul>
-        </div>
-    </>
+    <header className="header">
+      <h2 className="logo">Admin Dashboard</h2>
+      <nav className="navbar">
+        <button className="logout-btn" onClick={handleLogout}>
+          Log out
+        </button>
+      </nav>
+    </header>
   );
 };
+
 export default Header;

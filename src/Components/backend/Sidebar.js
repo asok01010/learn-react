@@ -1,21 +1,22 @@
-import { NavLink } from "react-router";
+import { NavLink } from "react-router-dom";
 
 const Sidebar = () => {
-  return(
-    <>
-      <div className="sidebar">
-        <ul>
-          <li>
-            <NavLink to="/admin/dashboard" activeClassName="active-link">Dashboard</NavLink>
-          </li>
-          <li>
-            <NavLink to="/admin/contact-us" activeClassName="active-link">Contact Us</NavLink>
-          </li>
-          {/* Add more links as needed */}
-        </ul>
-      </div>
-    </>
+  return (
+    <div className="col sidebar">
+      <ul>
+        <li>
+          <NavLink to="/admin/dashboard" className="nav-button">
+            Dashboard
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/admin/blog" className="nav-button">
+            Blog
+          </NavLink>
+        </li>
+      </ul>
+    </div>
   );
-    
 };
+
 export default Sidebar;

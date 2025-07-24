@@ -4,7 +4,7 @@ import "./App.css";
 // import Header from "./Components/layout/Header";
 // import Sidebar from "./Components/layout/Sidebar";
 
-import Student from "./Components/layout/Student";
+
 import Dashboard from "./pages/backend/DashBoard";
 import ContactUs from "./pages/frontend/ContactUS";
 import Home from "./pages/frontend/Home";
@@ -15,6 +15,8 @@ import Layout from "./Components/frontend/Layout";
 import About from "./pages/frontend/About";
 import Login from "./pages/backend/Login";
 import SignUp from "./pages/backend/SignUp";
+import Blog from "./pages/backend/Blog"
+import Create from "./pages/backend/Create"
 
 function App() {
   return (
@@ -34,8 +36,9 @@ function App() {
           <Route path="/admin/signup" element={<SignUp/>} />
           <Route path="/admin" element={<AdminLayout />}>
             <Route path="/admin/dashboard" element={<Dashboard />} />
-            <Route path="/admin/contact-us" element={<ContactUs />} />
-            <Route path="/admin/student" element={<Student />} />
+            <Route path="/admin/blog" element={<Blog />} />
+            <Route path="/admin/blog/create" element={<Create />} />
+           
           </Route>
         </Routes>
       </BrowserRouter>
