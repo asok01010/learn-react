@@ -1,4 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { getBlogById } from "../../services/blog";
 
 const Create = () => {
     const [data, setData] = useState({
@@ -8,16 +10,36 @@ const Create = () => {
      createdAt: new Date().toISOString() 
   });
 
+
+  const {id} = useParams();
+
+  
   const handleChange = (e) => {
     const { name, value } = e.target;
     setData({ ...data, [name]: value });
   };
 
-
+  useEffect(() => {
+    if (id) {
+      const blog = getBlogById(id);
+      
+        setData(
+          {
+            ...data,
+            title: blog.title,
+            description: blog.description,
+          }
+        );
+      }
+    }, []);
+    
 
   return (
     <div className="create-form">
-      <h3> Create Blog</h3>
+     
+      
+    {id && <h3>Edit Blog</h3>}
+    {!id && <h3>Create Blog</h3>} 
 
       <form >
         <div className="input-field">

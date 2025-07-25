@@ -1,26 +1,19 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import React, { useEffect } from "react";
+import { NavLink } from "react-router";
 import BlogRow from "../../Components/backend/BlogRow";
+import { getAllBlogs } from "../../services/blog";
+
 
 
 const Blog = () => {
-  const data = [
-    {
-      id: 1,
-      title: "blog 1",
-      author: "admins",
-      description: "blog 1 description",
-      created: "2025-07-18",
-    },
-    {
-      id: 2,
-      title: "blog 2",
-      author: "admins",
-      description: "blog 2 description",
-      created: "2025-07-13",
-    },
-  ];
 
+ const [blogs, setBlogs] = React.useState([]);
+
+    useEffect(() => {
+      const  data = getAllBlogs();
+      setBlogs(data);
+      }, []);
+      
   return (
     <div className="blog-wrapper">
       <div className="blog-header">
@@ -39,7 +32,7 @@ const Blog = () => {
           </tr>
         </thead>
         <tbody>
-        <BlogRow blogData={data} />
+        <BlogRow blogData={blogs} />
         </tbody>
       </table>
     </div>
