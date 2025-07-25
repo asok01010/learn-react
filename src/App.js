@@ -18,6 +18,7 @@ import SignUp from "./pages/backend/SignUp";
 import Blog from "./pages/backend/Blog"
 import Create from "./pages/backend/Create"
 
+
 function App() {
   return (
     <div className="app-layout">
@@ -38,6 +39,7 @@ function App() {
             <Route path="/admin/dashboard" element={<Dashboard />} />
             <Route path="/admin/blog" element={<Blog />} />
             <Route path="/admin/blog/create" element={<Create />} />
+            <Route path="/admin/blog/edit/:id" element={<Create />} />
            
           </Route>
         </Routes>

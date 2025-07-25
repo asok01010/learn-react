@@ -1,5 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import BlogRow from "../../Components/backend/BlogRow";
+
 
 const Blog = () => {
   const data = [
@@ -37,20 +39,7 @@ const Blog = () => {
           </tr>
         </thead>
         <tbody>
-          {data.map((item) => (
-            <tr key={item.id}>
-              <td>{item.title}</td>
-              <td>{item.author}</td>
-              <td>{item.created}</td>
-              <td>
-                <div className="action-buttons">
-                  <button className="action-btn1">Delete</button>
-                  <button className="action-btn2">Edit</button>
-                  <button className="action-btn3">View</button>
-                </div>
-              </td>
-            </tr>
-          ))}
+        <BlogRow blogData={data} />
         </tbody>
       </table>
     </div>
