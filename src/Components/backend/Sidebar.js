@@ -14,6 +14,12 @@ const Sidebar = () => {
             Blog
           </NavLink>
         </li>
+        <li>
+          <NavLink to="/admin/users" className="nav-button">
+            Users
+          </NavLink>
+          
+        </li>
       </ul>
     </div>
   );

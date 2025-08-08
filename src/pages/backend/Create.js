@@ -3,11 +3,13 @@ import { useParams } from "react-router-dom";
 import { getBlogById } from "../../services/blog";
 
 const Create = () => {
+
+
     const [data, setData] = useState({
     title: '',
     description: '',
     author: localStorage.getItem('USER_EMAIL'),
-     createdAt: new Date().toISOString() 
+    createdAt: new Date().toISOString() 
   });
 
 
@@ -21,16 +23,15 @@ const Create = () => {
 
   useEffect(() => {
     if (id) {
-      const blog = getBlogById(id);
-      
-        setData(
-          {
-            ...data,
-            title: blog.title,
-            description: blog.description,
-          }
-        );
-      }
+     getBlogById(id).then((response) => {
+        setData({
+          ...data,
+          id: response.id,    
+          title: response.title,
+          description: response.description,    
+        });
+      });
+    }
     }, []);
     
 

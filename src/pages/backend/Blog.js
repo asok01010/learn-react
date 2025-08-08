@@ -10,8 +10,10 @@ const Blog = () => {
  const [blogs, setBlogs] = React.useState([]);
 
     useEffect(() => {
-      const  data = getAllBlogs();
-      setBlogs(data);
+      getAllBlogs().then((response) => {
+         setBlogs(response);
+        });
+         
       }, []);
       
   return (
@@ -27,7 +29,7 @@ const Blog = () => {
           <tr>
             <th>Title</th>
             <th>Author</th>
-            <th>Created</th>
+            <th>Description</th>
             <th>Action</th>
           </tr>
         </thead>

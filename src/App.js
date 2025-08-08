@@ -17,6 +17,9 @@ import Login from "./pages/backend/Login";
 import SignUp from "./pages/backend/SignUp";
 import Blog from "./pages/backend/Blog"
 import Create from "./pages/backend/Create"
+import User from "./pages/backend/User";
+import CreateUser from "./pages/backend/CreateUser";
+
 
 
 function App() {
@@ -40,6 +43,10 @@ function App() {
             <Route path="/admin/blog" element={<Blog />} />
             <Route path="/admin/blog/create" element={<Create />} />
             <Route path="/admin/blog/edit/:id" element={<Create />} />
+            <Route path="/admin/users" element={<User />} />
+            <Route path="/admin/user/create" element={<CreateUser />} />
+            <Route path="/admin/user/edit/:id" element={<CreateUser />} />
+
            
           </Route>
         </Routes>
