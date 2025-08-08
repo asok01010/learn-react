@@ -591,3 +591,8 @@ button {
   border: 1px solid #ddd;
   text-align: center;
 }
+
+
+.error {
+  color: red;
+ }
