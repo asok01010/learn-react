@@ -1,35 +1,23 @@
-import { NavLink } from "react-router-dom";
+import { NavLink } from "react-router";
 
-
-const UserRow = ( props ) => {
-    return (
-        <> 
-            {props.userData.map((user , index ) => {
-                
-             return (
-   
+const UserRow = (props) => {
+  return (
+    <>
+      { props.userData && props.userData.map((item, index) => {
+          return (
             <tr key={index}>
-              <td>{user.id}</td>
-              <td>{user.name}</td>
-              <td>{user.email}</td>
-              <td>{user.created}</td>
+              <td>{item.name}</td>
+              <td>{item.email}</td>
+              <td>{item.phone}</td>
               <td>
-                <div className="action-buttons">
-                <button className="action-btn1"> <i className="ri-delete-bin-line"></i>Delete</button>
-                <NavLink to={`/admin/user/edit/${user.id}`}className="action-btn2"> <i class="ri-pencil-line"></i> Edit</NavLink>
-                <button className="action-btn3"> <i class="ri-eye-line"></i>View</button>
-                </div>
+                <button className="btn-danger" onClick={() => props.handleDelete(item.id)}>Delete</button> &nbsp;
+                <NavLink to={`/admin/user/edit/${item.id}`} className="btn-default">Edit</NavLink> &nbsp;
               </td>
             </tr>
-             )
- 
-            })}
-
-        </>
-   
-  
-    )
-
+          )
+      })}
+    </>
+  )
 }
 
 export default UserRow;

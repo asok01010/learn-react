@@ -62,3 +62,5 @@ export const deleteBlog = async (id) => {
     throw error;
   }
 }
+
+

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from "react-router";
 import { doLogin } from '../../services/auth';
+import { toast } from 'react-toastify';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -22,7 +23,7 @@ const Login = () => {
   }
 
   // Handle Form Submission
-  const handleBtnClick = () => {
+  const handleBtnClick = async () => {
     let error = false;
     if (email === '') {
       emailError = "Email is required";
@@ -36,10 +37,12 @@ const Login = () => {
     if (error) {
       return;
     }
-    const loginStatus = doLogin(email, password);
+      const loginStatus = await doLogin(email, password);
     if (loginStatus) {
+       toast.success(`Login successful, welcome ${email}`);
       navigate('/admin/dashboard');
     } else {
+      toast.error('Invalid email or password');
       setLoginError('Invalid email or password');
     }
 

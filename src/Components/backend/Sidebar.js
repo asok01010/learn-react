@@ -15,7 +15,7 @@ const Sidebar = () => {
           </NavLink>
         </li>
         <li>
-          <NavLink to="/admin/users" className="nav-button">
+          <NavLink to="/admin/user" className="nav-button">
             Users
           </NavLink>
           

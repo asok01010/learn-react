@@ -22,14 +22,18 @@
       "email": "yadav@email.com"
     },
     {
-      "id": "2",
-      "name": "John",
-      "email": "john@email.com"
+      "id": "abac",
+      "name": "Ashok Timalsina",
+      "email": "admin@gmail.com",
+      "password": "15e2b0d3c33891ebb0f1ef609ec419420c20e320ce94c65fbc8c3312448eb225",
+      "phone": "9840089022"
     },
     {
-      "id": "3",
-      "name": "Rame",
-      "email": "rame@email.com"
+      "id": "abac1",
+      "name": "Ashok Timalsina",
+      "email": "admin1@gmail.com",
+      "password": "12345678",
+      "phone": "9840089022"
     }
   ]
 }
