@@ -2,6 +2,8 @@ import React, { useEffect } from "react";
 import { NavLink } from "react-router";
 import BlogRow from "../../Components/backend/BlogRow";
 import { deleteBlog, getAllBlogs } from "../../services/blog";
+import { toast } from "react-toastify";
+
 
 const Blog = () => {
   const [blogs, setBlogs] = React.useState([]);
@@ -16,6 +18,7 @@ const Blog = () => {
     deleteBlog(id)
       .then((response) => {
         getAllBlogs().then((response) => {
+          toast.error("Blog has been deleted");
           setBlogs(response);
         });
       })

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router";
 import { createUser, getUserById, updateUser } from "../../services/user";
+import { toast } from "react-toastify";
 
 const UserForm = () => {
   const navigate = useNavigate();
@@ -71,6 +72,7 @@ const UserForm = () => {
         // UPDATE USER
         updateUser(id, data)
           .then((response) => {
+            toast.success("User has been updated");
             navigate("/admin/user");
           })
           .catch((error) => {
@@ -80,6 +82,7 @@ const UserForm = () => {
         // CREATE USER
         createUser(data)
           .then((response) => {
+            toast.success("User has been created");
             navigate("/admin/user");
           })
           .catch((error) => {
@@ -93,12 +96,13 @@ const UserForm = () => {
 
   return (
    
-      <div className="user-form">
+      <div className="create-form">
         {id && <h1>Edit User</h1>}
         {!id && <h1>Create User</h1>}
+        <br/>
       <form>
-        <div>
-          <label htmlFor="name">Full Name</label>
+        <div className="input-field">
+          <label htmlFor="name" className="label">Full Name</label>
           <input
             type="text"
             id="title"
@@ -109,7 +113,7 @@ const UserForm = () => {
           {errors.name && <p className="error">{errors.name}</p>}
         </div>
         <br />
-        <div>
+        <div className="input-field">
           <label htmlFor="email">Email</label>
           <input
             type="text"
@@ -122,7 +126,7 @@ const UserForm = () => {
         </div>
         <br />
         {!id && (
-          <div>
+          <div className="input-field">
             <label htmlFor="password">Password</label>
             <input
               type="password"
@@ -135,7 +139,7 @@ const UserForm = () => {
           </div>
         )}
         <br />
-        <div>
+       <div className="input-field">
           <label htmlFor="phone">Phone</label>
           <input
             type="text"
@@ -148,8 +152,8 @@ const UserForm = () => {
         </div>
         </form>
         <br />
-        <div>
-          <button className="btn-primary" onClick={handleSubmit}>
+         <div className="form-actions">
+           <button type="submit" className="submit-btn" onClick={handleSubmit}>
             Save
           </button>
         </div>

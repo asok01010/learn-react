@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { NavLink } from "react-router";
 import { deleteUser, getAllUsers } from "../../services/user";
 import UserRow from "../../Components/backend/UserRow";
+import {toast} from "react-toastify";
 
 const User = () => {
   const [users, setUsers] = useState([]);
@@ -15,6 +16,7 @@ const User = () => {
   const handleDelete = (id) => {
     deleteUser(id)
       .then((response) => {
+        toast.error("User has been deleted");
         getAllUsers().then((response) => {
           setUsers(response);
         });
@@ -27,9 +29,9 @@ const User = () => {
   return (
     <>
       <div>
-        <div className="user-header">
-            <h3>User</h3>
-            <NavLink to="/admin/user/create" className="btn-primary">Add</NavLink>
+        <div className="blog-header">
+           
+            <NavLink to="/admin/user/create" className="add-button">Add</NavLink>
         </div>
         <div className="user-table">
           <table>

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { getBlogById, createBlog, updateBlog } from "../../services/blog";
+import { toast } from "react-toastify";
 
 const Create = () => {
   const navigate = useNavigate();
@@ -60,6 +61,7 @@ const Create = () => {
         // Update existing blog
         updateBlog(id, data)
           .then((response) => {
+            toast.success("Blog has been updated ");
             navigate("/admin/blog");
           })
           .catch((error) => {
@@ -69,6 +71,7 @@ const Create = () => {
         // Create new blog
         createBlog(data)
           .then((response) => {
+            toast.success("Blog has been created ");
             navigate("/admin/blog");
           })
           .catch((error) => {

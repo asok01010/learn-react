@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { sha256 } from './utils/encryption';
+import { sha256 } from '../utils/encryption';
 
 export const getAllUsers = () => {
   return new Promise((resolve) => {

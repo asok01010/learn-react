@@ -1,38 +1,27 @@
 {
   "blogs": [
     {
-      "id": "2",
-      "title": "Updated title 2",
-      "author": "John",
-      "description": "Some Description for updated blog2 "
-    },
-    {
-      "title": "yadav vai",
-      "description": "yadav ko decscription\n",
-      "author": "admin",
-      "created_at": "2025-08-08T03:48:23.624Z",
-      "updated_at": "2025-08-08T03:48:23.624Z",
-      "id": "f357"
+      "title": " title 2 b",
+      "description": "Some Description for updated blog2",
+      "author": "yadav@gmail.com",
+      "created_at": "2025-08-14T15:25:04.564Z",
+      "updated_at": "2025-08-14T15:25:04.564Z",
+      "id": "2"
     }
   ],
   "users": [
     {
-      "id": "1",
-      "name": "Yadav",
-      "email": "yadav@email.com"
-    },
-    {
-      "id": "abac",
+      "id": "cdd9",
       "name": "Ashok Timalsina",
       "email": "admin@gmail.com",
-      "password": "15e2b0d3c33891ebb0f1ef609ec419420c20e320ce94c65fbc8c3312448eb225",
+      "password": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f",
       "phone": "9840089022"
     },
     {
-      "id": "abac1",
+      "id": "f72b",
       "name": "Ashok Timalsina",
-      "email": "admin1@gmail.com",
-      "password": "12345678",
+      "email": "admin@gmail.com",
+      "password": "03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4",
       "phone": "9840089022"
     }
   ]
