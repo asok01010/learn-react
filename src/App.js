@@ -5,7 +5,6 @@ import "./App.css";
 // import Sidebar from "./Components/layout/Sidebar";
 
 import Dashboard from "./pages/backend/DashBoard";
-import ContactUs from "./pages/frontend/ContactUS";
 import Home from "./pages/frontend/Home";
 
 import { BrowserRouter, Routes, Route } from "react-router";
@@ -33,7 +32,6 @@ function App() {
             <Route index element={<Home />} />
             <Route path="home" element={<Home />} />
             <Route path="about" element={<About />} />
-            <Route path="contact-us" element={<ContactUs />} />
           </Route>
 
           {/*admin routes*/}

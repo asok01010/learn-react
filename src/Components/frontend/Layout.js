@@ -11,7 +11,7 @@ const Layout = () => {
         <Header/>
       </header>
       
-        <div class="container">
+        <div className="container">
           <Outlet/>
         </div>
  

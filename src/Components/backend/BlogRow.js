@@ -16,7 +16,7 @@ const BlogRow = ( props ) => {
                 <div className="action-buttons">
                 
                 <button className="action-btn1" onClick={() => props.handleDelete(item.id)} >  <i className="ri-delete-bin-line"></i>  Delete</button>
-                <NavLink to={`/admin/blog/edit/${item.id}`}className="action-btn2"> <i class="ri-pencil-line"></i>Edit</NavLink>
+                <NavLink to={`/admin/blog/edit/${item.id}`}className="action-btn2"> <i className="ri-pencil-line"></i>Edit</NavLink>
                 <button className="action-btn3"> <i class="ri-eye-line"></i> View</button>
                 </div>
               </td>
