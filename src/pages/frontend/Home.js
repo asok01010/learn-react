@@ -1,12 +1,38 @@
+import { useEffect, useState } from 'react';
+import { Card } from 'antd';
+import { getAllBlogs } from '../../services/blog';
 function Home() {
+  const [blogs, setBlogs] = useState([]);
+  useEffect(() => {
+    const fetchBlogs = async () => {
+      const blogs = await getAllBlogs();
+      setBlogs(blogs);
+    }
+    fetchBlogs();
+  }, []);
+
   return (
-    <div className="container">
-      <div className="home-page">
-        <h1> This is the home page</h1>
-        <p> Welcome to the application! </p>
-      </div>
-    </div>
+   <Card title="Latest Blogs">
+      {
+        blogs.map((blog) => (
+          <Card
+            style={{ marginTop: 16 }}
+            type="inner"
+            title={blog.title}
+            extra={<a href="#">More</a>}
+          >
+            {blog.description}
+            <br />
+            <br />
+            <div>
+              <i>
+                Create by : {blog.author}, <i>{blog.created_at}</i>
+              </i>
+            </div>
+          </Card>
+        ))
+      }
+  </Card>
   );
 }
-
 export default Home;

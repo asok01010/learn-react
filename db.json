@@ -2,11 +2,19 @@
   "blogs": [
     {
       "title": "Blog 1.1",
-      "description": "Blog 1 Description",
+      "description": "The Dashboard component provides a clean and interactive interface to monitor key statistics and visualize data. It uses Ant Design’s <Statistic> components to display metrics like “Active” and “Idle” with dynamic icons and precise values, while a stacked bar chart created with react-chartjs-2 and Chart.js shows monthly data trends. The chart values are generated using Faker v9, simulating realistic random data for demonstration purposes. The layout is fully responsive, making it suitable for admin panels, monitoring systems, or demo applications that require dynamic data visualization without a backend.",
       "author": "yadav@gmail.com",
-      "created_at": "2025-08-14T17:25:16.490Z",
-      "updated_at": "2025-08-14T17:25:16.490Z",
+      "created_at": "2025-08-15T03:45:24.281Z",
+      "updated_at": "2025-08-15T03:45:24.281Z",
       "id": "2a91"
+    },
+    {
+      "id": "8dba",
+      "title": "Yadav Vai",
+      "description": "yadav jatthooo",
+      "author": "yadav@gmail.com",
+      "created_at": "2025-08-15T03:42:18.881Z",
+      "updated_at": "2025-08-15T03:42:18.881Z"
     }
   ],
   "users": [
